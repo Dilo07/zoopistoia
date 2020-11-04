@@ -15,18 +15,12 @@ public class Dipendente {
 		this.cognome = cognome;
 	}
 
-	public String getNomeCognome() {
-		return nome + " " + cognome;
+	public String getNome() {
+		return nome;
 	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-//	@RequestMapping("/dipendenti")
-//	@ResponseBody
-//	public String dipendenti() {
-//		return "dipendente 12";
-//	}
 	
+	public String getCognome() {
+		return cognome;
+	}
+		
 }

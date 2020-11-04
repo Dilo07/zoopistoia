@@ -17,5 +17,8 @@ public class DipendentiService {
 		return dipendenti;
 	}
 	
+	public Dipendente getdipendente(String nome) {
+		return dipendenti.stream().filter(t -> t.getNome().equals(nome)).findFirst().get();
+	}
 
 }
