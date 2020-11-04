@@ -14,6 +14,7 @@ public class DipendentiController {
 	@RequestMapping("/Dipendente")
 	@ResponseBody
 	public List<Dipendente> getdipendenti() {
-		return Arrays.asList(new Dipendente("Andrea"),new Dipendente("Mar0co"),new Dipendente("Cristina"));
+		return Arrays.asList(new Dipendente("Andrea","Di Lorenzo"),new Dipendente("Marco","Di Lorenzo"),
+				new Dipendente("Cristina","Di Lorenzo"));
 	}
 }
