@@ -15,8 +15,8 @@ public class Dipendente {
 		this.cognome = cognome;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getNomeCognome() {
+		return nome + " " + cognome;
 	}
 
 	public void setNome(String nome) {
