@@ -1,26 +1,26 @@
 package com.example.demo.Dipendenti;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
-
 public class Dipendente {
 	private String nome;
 	private String cognome;
-	private String grado;
 	private int id;
 	
-	public Dipendente(String nome, String cognome){
+	public Dipendente(int id, String nome, String cognome){
+		this.id = id;
 		this.nome = nome;
 		this.cognome = cognome;
 	}
 
 	public String getNome() {
-		return nome;
+		return this.nome;
 	}
 	
 	public String getCognome() {
-		return cognome;
+		return this.cognome;
+	}
+
+	public int getId() {
+		return id;
 	}
 		
 }
