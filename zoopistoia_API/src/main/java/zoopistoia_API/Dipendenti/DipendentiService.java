@@ -24,6 +24,8 @@ public class DipendentiService {
 	private List<Dipendente> dipendenti = new ArrayList<>();
 	
 	public List<Dipendente> getAllDipendenti(){
+		
+		// scorre tutte le istanze di dipendentiRepository (Interfaccia JpaRepository <Dipendente, Integer>) e per ogni istanza popola la List dipendenti
 		dipendentiRepository.findAll().forEach(dipendenti::add);
 		
 //		dipendentiRepository.findAll().forEach((dip)->{
@@ -35,7 +37,7 @@ public class DipendentiService {
 	public Dipendente getDipendente(Integer id) {
 		// cerca in tutta la lista Dipendente e tramite in metodo getNome verifica se esiste un oggetto con il nome passato
 		//return dipendenti.stream().filter(t -> t.getNome().equals(nome)).findFirst().get();
-		Optional <Dipendente> app = dipendentiRepository.findById(id);
+		 Optional <Dipendente> app = dipendentiRepository.findById(id);
 		return app.isPresent() ? app.get():null;
 	}
 	
@@ -51,7 +53,7 @@ public class DipendentiService {
 		
 	}
 	
-	public void updateDipendente(Dipendente dipendente) {
+	public boolean updateDipendente(Dipendente dipendente) {
 //		for(int i=0; i<dipendenti.size(); i++) {
 //			Dipendente d = dipendenti.get(i);
 //			if( d.getNome().equals(nome)) {
@@ -59,10 +61,18 @@ public class DipendentiService {
 //				return;
 //			}
 //		}	
-		dipendentiRepository.save(dipendente);
+		try {
+			dipendentiRepository.save(dipendente);
+			return true;
+		}
+		catch(Exception e) {
+			System.out.println(e);
+			return false;
+		}
+		
 	}
 	
-	public void deleteDipendente(Integer id) {
+	public boolean deleteDipendente(Integer id) {
 //		for(int i=0; i<dipendenti.size(); i++) {
 //			Dipendente d = dipendenti.get(i);
 //			if( d.getNome().equals(nome)) {
@@ -70,7 +80,14 @@ public class DipendentiService {
 //				return;
 //			}
 //		}
-		dipendentiRepository.deleteById(id);
+		try {
+			dipendentiRepository.deleteById(id);
+			return true;
+		}
+		catch(Exception e) {
+			System.out.println(e);
+			return false;
+		}
 	}
 
 }

@@ -23,7 +23,6 @@ public class Dipendente implements Serializable {
 	
 	public Dipendente() {};
 	
-	
 	public Dipendente(int id, String nome, String cognome){
 		this.id = id;
 		this.nome = nome;

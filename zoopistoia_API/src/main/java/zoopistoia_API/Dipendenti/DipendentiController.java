@@ -37,14 +37,14 @@ public class DipendentiController {
 	
 	//metodo per aggiornare il dipendente che ha il nome uguale a quello passato nell'url
 	@RequestMapping(method=RequestMethod.PUT, value="/updateDipendente")
-	public void updateDipendente(@RequestBody Dipendente dipendente) {
-		this.dipendentiservice.updateDipendente(dipendente);
+	public boolean updateDipendente(@RequestBody Dipendente dipendente) {
+		return this.dipendentiservice.updateDipendente(dipendente);
 	}
 	
 	//metodo per eliminared il dipendente che ha il nome uguale a quello passato nell'url
 	@RequestMapping(method=RequestMethod.DELETE, value="/deleteDipendente/{id}")
-	public void deleteDipendente(@PathVariable Integer id) {
-		this.dipendentiservice.deleteDipendente(id);
+	public boolean deleteDipendente(@PathVariable Integer id) {
+		return this.dipendentiservice.deleteDipendente(id);
 	}
 	
 }
