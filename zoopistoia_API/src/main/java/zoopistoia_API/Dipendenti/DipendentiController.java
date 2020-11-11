@@ -23,7 +23,7 @@ public class DipendentiController {
 		return this.dipendentiservice.getAllDipendenti();
 	}
 	
-	// chiama il metodo getdipendente ed in pase al nome passato nell'url, mostra il json dell'oggetto con quel nome
+	// chiama il metodo getdipendente ed in base all'id passato nell'url, mostra il json dell'oggetto con quel nome
 	@RequestMapping("/getDipendente/{id}")
 	public Dipendente getDipendente(@PathVariable Integer id) {
 		return this.dipendentiservice.getDipendente(id);

@@ -1,6 +1,5 @@
 package zoopistoia_API.Dipendenti;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,36 +20,36 @@ public class DipendentiService {
 //				new Dipendente("Marco","Di Lorenzo"),
 //				new Dipendente("Cristina","Di Lorenzo")));
 	
-	private List<Dipendente> dipendenti = new ArrayList<>();
+	//private List<Dipendente> dipendenti = new ArrayList<>();
 	
 	public List<Dipendente> getAllDipendenti(){
-		
+		// svuota la lista dipendenti salvata in RAM
+		//dipendenti.clear();
 		// scorre tutte le istanze di dipendentiRepository (Interfaccia JpaRepository <Dipendente, Integer>) e per ogni istanza popola la List dipendenti
-		dipendentiRepository.findAll().forEach(dipendenti::add);
-		
+		//dipendentiRepository.findAll().forEach(dipendenti::add);
+		return dipendentiRepository.findAll();
 //		dipendentiRepository.findAll().forEach((dip)->{
 //			dipendenti.add(dip);
 //		});
-		return dipendenti;
+		//return dipendenti;
 	}
 	
 	public Dipendente getDipendente(Integer id) {
 		// cerca in tutta la lista Dipendente e tramite in metodo getNome verifica se esiste un oggetto con il nome passato
 		//return dipendenti.stream().filter(t -> t.getNome().equals(nome)).findFirst().get();
-		 Optional <Dipendente> app = dipendentiRepository.findById(id);
+		Optional <Dipendente> app = dipendentiRepository.findById(id);
 		return app.isPresent() ? app.get():null;
 	}
 	
 	public boolean addDipendente(Dipendente dipendente) {
 		try {
-			dipendentiRepository.save(dipendente);
-			return true;
+				dipendentiRepository.save(dipendente);
+				return true;				
 		}
 		catch(Exception e){
 			System.out.println(e);
 			return false;
 		}
-		
 	}
 	
 	public boolean updateDipendente(Dipendente dipendente) {
@@ -69,17 +68,9 @@ public class DipendentiService {
 			System.out.println(e);
 			return false;
 		}
-		
 	}
 	
 	public boolean deleteDipendente(Integer id) {
-//		for(int i=0; i<dipendenti.size(); i++) {
-//			Dipendente d = dipendenti.get(i);
-//			if( d.getNome().equals(nome)) {
-//				dipendenti.remove(i);
-//				return;
-//			}
-//		}
 		try {
 			dipendentiRepository.deleteById(id);
 			return true;

@@ -15,15 +15,15 @@ import javax.persistence.Table;
 public class Dipendente implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
-	@Column(name = "nome")
+	private Integer id;
+	@Column(name = "Nome")
 	private String nome;
-	@Column(name = "cognome")
+	@Column(name = "Cognome")
 	private String cognome;
 	
 	public Dipendente() {};
 	
-	public Dipendente(int id, String nome, String cognome){
+	public Dipendente(Integer id, String nome, String cognome){
 		this.id = id;
 		this.nome = nome;
 		this.cognome = cognome;
@@ -37,7 +37,7 @@ public class Dipendente implements Serializable {
 		return cognome;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 		
