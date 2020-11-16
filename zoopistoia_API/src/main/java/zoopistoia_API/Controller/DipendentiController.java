@@ -1,4 +1,4 @@
-package zoopistoia_API.Dipendenti;
+package zoopistoia_API.Controller;
 
 import java.util.List;
 
@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import zoopistoia_API.Model.Dipendente;
+import zoopistoia_API.Service.DipendentiService;
 
 
 @RestController
@@ -46,5 +49,5 @@ public class DipendentiController {
 	public boolean deleteDipendente(@PathVariable Integer id) {
 		return this.dipendentiservice.deleteDipendente(id);
 	}
-	
+
 }

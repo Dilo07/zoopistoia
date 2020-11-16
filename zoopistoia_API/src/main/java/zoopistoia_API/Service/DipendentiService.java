@@ -1,10 +1,13 @@
-package zoopistoia_API.Dipendenti;
+package zoopistoia_API.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import zoopistoia_API.Model.Dipendente;
+import zoopistoia_API.Repository.DipendentiRepository;
 
 @Service
 public class DipendentiService {

@@ -1,4 +1,4 @@
-package zoopistoia_API.Dipendenti;
+package zoopistoia_API.Model;
 
 import java.io.Serializable;
 
