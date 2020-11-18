@@ -1,18 +1,23 @@
 package zoopistoia_API.Model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @SuppressWarnings("serial")
 @Entity 
 @Table(name ="dipendenti")
 public class Dipendente implements Serializable {
+	
+	public Dipendente() {};
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
@@ -21,7 +26,9 @@ public class Dipendente implements Serializable {
 	@Column(name = "Cognome")
 	private String cognome;
 	
-	public Dipendente() {};
+	@OneToMany(mappedBy = "dipendente")
+	private List<Accesso> accessi;
+	
 	
 	public Dipendente(Integer id, String nome, String cognome){
 		this.id = id;
@@ -39,6 +46,14 @@ public class Dipendente implements Serializable {
 
 	public Integer getId() {
 		return id;
+	}
+	
+	public List<Accesso> getAccessi() {
+		return accessi;
+	}
+
+	public void setAccessi(List<Accesso> accessi) {
+		this.accessi = accessi;
 	}
 		
 }

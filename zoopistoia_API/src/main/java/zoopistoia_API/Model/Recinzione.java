@@ -12,7 +12,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
-
 @SuppressWarnings("serial")
 @Entity
 @Table(name="recinzioni")
@@ -35,6 +34,9 @@ public class Recinzione implements Serializable{
 	@OneToMany(mappedBy = "recinzione")
 	private List<Animale> animali;
 	
+	@OneToMany(mappedBy = "recinzione")
+	private List<Accesso> accessi;
+	
 //	public Recinzione(Integer id, String Tipo_Animali, Integer Capienza, Integer Disponibilità) {
 //		this.id=id;
 //		this.tipo_Animali=Tipo_Animali;
@@ -50,14 +52,6 @@ public class Recinzione implements Serializable{
 		this.id = id;
 	}
 
-	public List<Animale> getAnimali() {
-		return animali;
-	}
-	
-	public void setAnimali(List<Animale> animali) {
-		this.animali = animali;
-	}
-	
 	public String getTipo_Animali() {
 		return tipo_Animali;
 	}
@@ -68,6 +62,22 @@ public class Recinzione implements Serializable{
 
 	public Integer getDisponibilità() {
 		return disponibilità;
+	}
+
+	public List<Animale> getAnimali() {
+		return animali;
+	}
+	
+	public void setAnimali(List<Animale> animali) {
+		this.animali = animali;
+	}
+
+	public List<Accesso> getAccessi() {
+		return accessi;
+	}
+
+	public void setAccessi(List<Accesso> accessi) {
+		this.accessi = accessi;
 	}
 	
 }
