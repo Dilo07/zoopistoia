@@ -15,13 +15,14 @@ public class AccessiService {
 	@Autowired
 	public AccessiRepository accessiRepository;
 	 
-	public Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+	public Timestamp timestamp; //= new Timestamp(System.currentTimeMillis());
 
 	public List<Accesso> getAllAccessi() {
 		return accessiRepository.findAll();
 	}
 
 	public boolean Ingresso(Accesso accesso) {
+		timestamp = new Timestamp(System.currentTimeMillis());
 		try {
 			accesso.setData_ingresso(timestamp);
 			accessiRepository.save(accesso);
@@ -35,6 +36,7 @@ public class AccessiService {
 	}
 	
 	public boolean Uscita(Accesso accesso) {
+		timestamp = new Timestamp(System.currentTimeMillis());
 		// mi salvo su una variabile di tipo Accesso l'indirizzo dell'oggetto con id getId() passato nel body(json)
 		Accesso app = accessiRepository.getOne(accesso.getId());
 		if(app.getData_ingresso()!= null) {

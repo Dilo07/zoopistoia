@@ -29,8 +29,6 @@ public class Recinzione implements Serializable{
 	@Column(name = "Disponibilità")
 	private Integer disponibilità;
 	
-//	@OneToMany(targetEntity = Animale.class,cascade = CascadeType.ALL)
-//	@JoinColumn(name ="id_recinzione",referencedColumnName = "id")
 	@OneToMany(mappedBy = "recinzione")
 	private List<Animale> animali;
 	
