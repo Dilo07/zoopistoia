@@ -15,7 +15,7 @@ public class AccessiService {
 	@Autowired
 	public AccessiRepository accessiRepository;
 	 
-	public Timestamp timestamp; //= new Timestamp(System.currentTimeMillis());
+	public Timestamp timestamp; 
 
 	public List<Accesso> getAllAccessi() {
 		return accessiRepository.findAll();
