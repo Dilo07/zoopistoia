@@ -31,8 +31,7 @@ public class AccessiService {
 		catch(Exception e) {
 			System.out.println(e);
 			return false;
-		}
-		
+		}	
 	}
 	
 	public boolean Uscita(Accesso accesso) {
@@ -51,5 +50,10 @@ public class AccessiService {
 			return false;
 		}
 		
+	}
+
+	public Accesso getDipinRec(Integer id,Timestamp datein,Timestamp dateout) {
+		return this.accessiRepository.getDipinRec(id,datein,dateout);
+
 	}
 }
