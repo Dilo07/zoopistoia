@@ -37,7 +37,7 @@ public class AccessiService {
 	
 	public boolean Uscita(Accesso accesso) {
 		timestamp = new Timestamp(System.currentTimeMillis());
-		// mi salvo su una variabile di tipo Accesso 'indirizzo dell'oggetto con id getId() passato nel body(json)
+		// mi salvo su una variabile di tipo Accesso l'indirizzo dell'oggetto con id getId() passato nel body(json)
 		Accesso app = accessiRepository.getOne(accesso.getId());
 		if(app.getData_ingresso()!= null) {
 			// setto la data ingresso
