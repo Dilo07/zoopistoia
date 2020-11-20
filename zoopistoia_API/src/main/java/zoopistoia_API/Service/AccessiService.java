@@ -54,6 +54,9 @@ public class AccessiService {
 
 	public Accesso getDipinRec(Integer id,Timestamp datein,Timestamp dateout) {
 		return this.accessiRepository.getDipinRec(id,datein,dateout);
-
+	}
+	
+	public Accesso getRecforDip(Integer id,Timestamp datein,Timestamp dateout) {
+		return this.accessiRepository.getRecforDip(id,datein,dateout);
 	}
 }

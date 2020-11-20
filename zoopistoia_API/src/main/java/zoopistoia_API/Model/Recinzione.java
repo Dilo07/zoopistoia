@@ -35,6 +35,9 @@ public class Recinzione implements Serializable{
 	@OneToMany(mappedBy = "recinzione")
 	private List<Accesso> accessi;
 	
+	@OneToMany(mappedBy = "recinzione")
+	private List<Permesso> permessi;
+	
 //	public Recinzione(Integer id, String Tipo_Animali, Integer Capienza, Integer Disponibilità) {
 //		this.id=id;
 //		this.tipo_Animali=Tipo_Animali;
@@ -76,6 +79,14 @@ public class Recinzione implements Serializable{
 
 	public void setAccessi(List<Accesso> accessi) {
 		this.accessi = accessi;
+	}
+
+	public List<Permesso> getPermessi() {
+		return permessi;
+	}
+
+	public void setPermessi(List<Permesso> permessi) {
+		this.permessi = permessi;
 	}
 	
 }

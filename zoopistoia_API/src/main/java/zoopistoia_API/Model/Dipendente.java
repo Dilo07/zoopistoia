@@ -29,6 +29,9 @@ public class Dipendente implements Serializable {
 	@OneToMany(mappedBy = "dipendente")
 	private List<Accesso> accessi;
 	
+	@OneToMany(mappedBy = "dipendente")
+	private List<Permesso> permessi;
+	
 	
 	public Dipendente(Integer id, String nome, String cognome){
 		this.id = id;
@@ -54,6 +57,14 @@ public class Dipendente implements Serializable {
 
 	public void setAccessi(List<Accesso> accessi) {
 		this.accessi = accessi;
+	}
+
+	public List<Permesso> getPermessi() {
+		return permessi;
+	}
+
+	public void setPermessi(List<Permesso> permessi) {
+		this.permessi = permessi;
 	}
 		
 }

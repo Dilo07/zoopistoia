@@ -36,11 +36,16 @@ public class AccessiController {
 		return this.accessiService.Uscita(accesso);
 	}
 	
-	@RequestMapping("/DipinRec/{id}/{datein}/{dateout}") ///{datein}/{dateout}")
+	//query per estrarre quali operatori sono entrati in una recinzione data come input (id recinzione)
+	@RequestMapping(method=RequestMethod.GET,value="/DipinRec/{id}/{datein}/{dateout}")
 	public Accesso getDipinRec(@PathVariable Integer id,@PathVariable Timestamp datein,@PathVariable Timestamp dateout) {
-
 		return this.accessiService.getDipinRec(id,datein,dateout);
-			
+	}
+	
+	//query per estrarre in quali recinzioni è entrato un operatore dato come input (id operatore)
+	@RequestMapping(method=RequestMethod.GET,value="/RecforDip/{id}/{datein}/{dateout}")
+	public Accesso getRecforDip(@PathVariable Integer id,@PathVariable Timestamp datein,@PathVariable Timestamp dateout) {
+		return this.accessiService.getRecforDip(id,datein,dateout);
 	}
 
 }
