@@ -30,6 +30,11 @@ public class RecinzioniController {
 		return this.recinzioniservice.getRecinzione(id);
 	}
 	
+//	@RequestMapping("/getPermessiDipendentiInRecinzione/{id}")
+//	public List<Recinzione> getPermessiDipendentiInRecinzione(@PathVariable Integer id) {
+//		return this.recinzioniservice.getPermessiDipendentiInRecinzione(id);
+//	}
+	
 	@RequestMapping(method=RequestMethod.POST, value="/newRecinzione")
 	public boolean addRecinzione(@RequestBody Recinzione recinzione) {
 		return this.recinzioniservice.addUpdateRecinzione(recinzione);

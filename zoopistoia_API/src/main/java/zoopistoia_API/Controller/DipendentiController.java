@@ -3,6 +3,7 @@ package zoopistoia_API.Controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import zoopistoia_API.Model.Dipendente;
 import zoopistoia_API.Service.DipendentiService;
 
-
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/Dipendenti")
 public class DipendentiController {
@@ -34,7 +35,7 @@ public class DipendentiController {
 	
 	//metodo per aggiungere un dipendente, verrà aggiunto un json nel corso nella richiesta, cone le informazioni.
 	@RequestMapping(method=RequestMethod.POST, value="/newDipendente")
-	public boolean addDipendente(@RequestBody Dipendente dipendente) {
+	public Integer addDipendente(@RequestBody Dipendente dipendente) {
 		return this.dipendentiservice.addDipendente(dipendente);
 	}
 	

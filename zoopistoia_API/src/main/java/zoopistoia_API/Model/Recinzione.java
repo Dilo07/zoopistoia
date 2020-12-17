@@ -65,6 +65,10 @@ public class Recinzione implements Serializable{
 		return disponibilità;
 	}
 
+	public void setDisponibilità(Integer disponibilità) {
+		this.disponibilità = disponibilità;
+	}
+
 	public List<Animale> getAnimali() {
 		return animali;
 	}

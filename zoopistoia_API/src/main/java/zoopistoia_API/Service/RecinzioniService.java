@@ -45,4 +45,8 @@ public class RecinzioniService {
 			return false;
 		}
 	}
+
+//	public List<Recinzione> getPermessiDipendentiInRecinzione(Integer id) {
+//		return recinzioniRepository.getPermessiDipendentiInRecizione(id);
+//	}
 }

@@ -2,6 +2,7 @@ package zoopistoia_API.Repository;
 
 
 import java.sql.Timestamp;
+import java.util.List;
 
 import javax.transaction.Transactional;
 
@@ -10,6 +11,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import zoopistoia_API.Model.Accesso;
+import zoopistoia_API.Model.Recinzione;
 
 
 @Repository

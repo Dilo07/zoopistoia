@@ -25,19 +25,19 @@ public class AnimaliController {
 		return this.animaliservice.getAllAnimali();
 	}
 	
-//	@RequestMapping("/getAll/{id}")
-//	public List<Animale> getAnimali(@PathVariable Integer id) {
-//		return this.animaliservice.getAllAnimali(id);
-//	}
+	@RequestMapping("/getAnimaliInRecinzione/{id}")
+	public List<Animale> getAnimaliInRecizione(@PathVariable Integer id) {
+		return this.animaliservice.getAnimaliInRecizione(id);
+	}
 	
 	@RequestMapping(method=RequestMethod.POST, value="/newAnimale")
 	public boolean addAnimale(@RequestBody Animale animale){
-		return this.animaliservice.addUpdateAnimale(animale);
+		return this.animaliservice.addAnimale(animale);
 	}
 	
 	@RequestMapping(method=RequestMethod.PUT, value="/updateAnimale")
 	public boolean updateAnimale(@RequestBody Animale animale){
-		return this.animaliservice.addUpdateAnimale(animale);
+		return this.animaliservice.UpdateAnimale(animale);
 	}
 	
 	@RequestMapping(method=RequestMethod.DELETE, value="/deleteAnimale/{id}")
