@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import zoopistoia_API.Model.Accesso;
+import zoopistoia_API.Model.Recinzione;
 import zoopistoia_API.Repository.AccessiRepository;
 
 @Service
@@ -49,7 +50,6 @@ public class AccessiService {
 		else {
 			return false;
 		}
-		
 	}
 
 	public Accesso getDipinRec(Integer id,Timestamp datein,Timestamp dateout) {
@@ -58,5 +58,9 @@ public class AccessiService {
 	
 	public Accesso getRecforDip(Integer id,Timestamp datein,Timestamp dateout) {
 		return this.accessiRepository.getRecforDip(id,datein,dateout);
+	}
+
+	public void deleteAccesso(Integer id) {
+		accessiRepository.deleteById(id);
 	}
 }

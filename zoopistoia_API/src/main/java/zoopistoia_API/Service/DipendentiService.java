@@ -44,14 +44,15 @@ public class DipendentiService {
 		return app.isPresent() ? app.get():null;
 	}
 	
-	public boolean addDipendente(Dipendente dipendente) {
+	public Integer addDipendente(Dipendente dipendente) {
 		try {
 				dipendentiRepository.save(dipendente);
-				return true;				
+				int respID = dipendente.getId();
+				return respID;				
 		}
 		catch(Exception e){
 			System.out.println(e);
-			return false;
+			return 0;
 		}
 	}
 	

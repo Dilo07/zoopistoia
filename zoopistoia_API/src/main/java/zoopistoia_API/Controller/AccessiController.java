@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import zoopistoia_API.Model.Accesso;
+import zoopistoia_API.Model.Recinzione;
 import zoopistoia_API.Service.AccessiService;
 
 @RestController
@@ -46,6 +47,11 @@ public class AccessiController {
 	@RequestMapping(method=RequestMethod.GET,value="/RecforDip/{id}/{datein}/{dateout}")
 	public Accesso getRecforDip(@PathVariable Integer id,@PathVariable Timestamp datein,@PathVariable Timestamp dateout) {
 		return this.accessiService.getRecforDip(id,datein,dateout);
+	}
+	
+	@RequestMapping(method=RequestMethod.DELETE,value="/deleteAccesso/{id}")
+	public void deleteAccesso(@PathVariable Integer id) {
+		this.accessiService.deleteAccesso(id);
 	}
 
 }

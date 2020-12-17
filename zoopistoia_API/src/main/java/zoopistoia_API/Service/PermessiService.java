@@ -29,21 +29,14 @@ public class PermessiService {
 	public boolean newPermesso(Permesso permesso) {
 		Dipendente dip = permesso.getDipendente();
 		Recinzione rec = permesso.getRecinzione();
-//		System.out.println(dip.getId());
-//		System.out.println(dipendentiRepository.getOne(dip.getId()));
-//		Permesso app = permessiRepository.getOne(dip.getId());
-//		Permesso app2 = permessiRepository.getOne(rec.getId());
-//		System.out.println(app.getRecinzione());
-		
-		try {
-			//verifico che l'id dipendente inserito esiste
-			System.out.println(dipendentiRepository.getOne(dip.getId()));
-			//verifico che l'id recinzione inserito esiste
-			System.out.println(recinzioniRepository.getOne(rec.getId()));
+	
+		//verifica se esiste l'id dipendente e l'id recinzione passati nel body
+		if (dipendentiRepository.existsById(dip.getId())== true && recinzioniRepository.existsById(rec.getId())==true) {
 			permessiRepository.save(permesso);
 			return true;
 		}
-		catch(Exception e) {
+		else {
+			Exception e = new Exception();
 			System.out.println(e);
 			return false;
 		}
