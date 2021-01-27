@@ -47,6 +47,7 @@ public class DipendentiService {
 	public Integer addDipendente(Dipendente dipendente) {
 		try {
 				dipendentiRepository.save(dipendente);
+				//ritorno il nuovo id del dipendente per il frontend
 				int respID = dipendente.getId();
 				return respID;				
 		}

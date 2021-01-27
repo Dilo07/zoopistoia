@@ -3,6 +3,7 @@ package zoopistoia_API.Controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import zoopistoia_API.Model.Animale;
 import zoopistoia_API.Service.AnimaliService;
 
-
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/Animali")
 public class AnimaliController {
@@ -44,5 +45,4 @@ public class AnimaliController {
 	public boolean deleteAnimale(@PathVariable Integer id){
 		return this.animaliservice.deleteAnimale(id);
 	}
-
 }

@@ -62,7 +62,7 @@ public class AnimaliService {
  		// creo una variablie Animale associando l'oggetto con l'id passato e creo una variabile recinzione passandogli l'id della chiave esterna recinzione
 			Animale an = animaliRepository.getOne(id);
 			Recinzione rec = an.getRecinzione();
-			rec.setDisponibilità(rec.getDisponibilità() - 1);
+			rec.setDisponibilità(rec.getDisponibilità() + 1);
 			recinzioniRepository.save(rec);
 			animaliRepository.deleteById(id);
 			return true;
